@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="customer">
+
+<!-- 查询数据总量 -->
+        <select id="getAll" resultType="Customer">
+                select * from customer
+        </select>
+        <select id="getCount" resultType="int">
+                select count(*) from customer
+        </select>
+        <insert id="save" parameterType="Customer">
+                INSERT INSERT customer(store_id,firsrt_name,last_name,email,address_id,create_date) VALUES (#{store_id},#{firsrt_name},#{last_name},#{email},#{address_id},create_date);
+        </insert>
+        <select id="getId" resultType="int" parameterType="Customer">
+                SELECT customer_id FROM customer WHERE first_name=#{first_name} AND last_name=#{last_name} ;
+        </select>
+
+</mapper>

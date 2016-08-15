@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration  
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"  
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+
+    <typeAliases>
+        <package name="com.hand.bean"/>
+    </typeAliases>
+    <mappers>
+        <mapper resource="bean/customer_mapping.xml" />
+        <mapper resource="bean/address_mapping.xml"/>
+        <mapper resource="bean/city_mapping.xml"/>
+        <mapper resource="bean/country_mapping.xml"/>
+        <mapper resource="bean/store_mapping.xml"/>
+    </mappers>
+    
+</configuration>
