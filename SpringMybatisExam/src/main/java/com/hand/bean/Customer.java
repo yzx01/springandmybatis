@@ -4,46 +4,46 @@ import java.util.Date;
 
 public class Customer {
 
-    private Integer customer_id;
-    private Integer store_id;
-    private String first_name;
-    private String last_name;
+    private Integer customerid;
+    private Integer storeid;
+    private String firstname;
+    private String lastname;
     private String email;
-    private Integer address_id;
+    private Integer addressid;
     private Integer active;
-    private Date create_date;
-    private String last_update;
+    private Date createdate;
+    private String lastupdate;
 
-    public Integer getCustomer_id() {
-        return customer_id;
+    public Integer getActive() {
+        return active;
     }
 
-    public void setCustomer_id(Integer customer_id) {
-        this.customer_id = customer_id;
+    public void setActive(Integer active) {
+        this.active = active;
     }
 
-    public Integer getStore_id() {
-        return store_id;
+    public Integer getAddressid() {
+        return addressid;
     }
 
-    public void setStore_id(Integer store_id) {
-        this.store_id = store_id;
+    public void setAddressid(Integer addressid) {
+        this.addressid = addressid;
     }
 
-    public String getFirst_name() {
-        return first_name;
+    public Date getCreatedate() {
+        return createdate;
     }
 
-    public void setFirst_name(String first_name) {
-        this.first_name = first_name;
+    public void setCreatedate(Date createdate) {
+        this.createdate = createdate;
     }
 
-    public String getLast_name() {
-        return last_name;
+    public Integer getCustomerid() {
+        return customerid;
     }
 
-    public void setLast_name(String last_name) {
-        this.last_name = last_name;
+    public void setCustomerid(Integer customerid) {
+        this.customerid = customerid;
     }
 
     public String getEmail() {
@@ -54,49 +54,52 @@ public class Customer {
         this.email = email;
     }
 
-    public Integer getAddress_id() {
-        return address_id;
+    public String getFirstname() {
+        return firstname;
     }
 
-    public void setAddress_id(Integer address_id) {
-        this.address_id = address_id;
+    public void setFirstname(String firstname) {
+        this.firstname = firstname;
     }
 
-    public Integer getActive() {
-        return active;
+    public String getLastname() {
+        return lastname;
     }
 
-    public void setActive(Integer active) {
-        this.active = active;
+    public void setLastname(String lastname) {
+        this.lastname = lastname;
     }
 
-    public Date getCreate_date() {
-        return create_date;
+    public String getLastupdate() {
+        return lastupdate;
     }
 
-    public void setCreate_date(Date create_date) {
-        this.create_date = create_date;
+    public void setLastupdate(String lastupdate) {
+        this.lastupdate = lastupdate;
     }
 
-    public String getLast_update() {
-        return last_update;
+    public Integer getStoreid() {
+        return storeid;
     }
 
-    public void setLast_update(String last_update) {
-        this.last_update = last_update;
+    public void setStoreid(Integer storeid) {
+        this.storeid = storeid;
     }
 
-    public Customer( Integer store_id, String first_name, String last_name, String email, Integer address_id, Date create_date) {
-        this.store_id = store_id;
-        this.first_name = first_name;
-        this.last_name = last_name;
+    public Customer() {
+    }
+
+    public Customer(Integer storeid, String firstname, String lastname, String email, Integer addressid, Date createdate) {
+        this.storeid = storeid;
+        this.firstname = firstname;
+        this.lastname = lastname;
+        this.addressid = addressid;
+        this.createdate = createdate;
         this.email = email;
-        this.address_id = address_id;
-        this.create_date = create_date;
     }
 
     public Customer(String first_name, String last_name) {
-        this.first_name = first_name;
-        this.last_name = last_name;
+        this.firstname = first_name;
+        this.lastname = last_name;
     }
 }

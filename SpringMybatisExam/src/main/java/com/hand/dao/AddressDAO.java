@@ -8,27 +8,9 @@ import javax.annotation.Resource;
 /**
  * Created by zhongxing on 2016/8/15.
  */
-@Component
-public class AddressDAO {
-    private SqlSessionTemplate sqlSessionTemplate;
+public interface AddressDAO {
 
-    public SqlSessionTemplate getSqlSessionTemplate() {
-        return sqlSessionTemplate;
-    }
+    public Integer getAddressById(int id);
 
-    @Resource(name="sqlSessionTemplate")
-    public void setSqlSessionTemplate(SqlSessionTemplate sqlSessionTemplate) {
-
-        this.sqlSessionTemplate = sqlSessionTemplate;
-    }
-
-    public Integer getAddressById(int id){
-        int count = sqlSessionTemplate.selectOne("address.getAddress_id",id);
-        return count;
-    }
-
-    public String getAddress(int id){
-        String address = sqlSessionTemplate.selectOne("address.getAddress",id);
-        return address;
-    }
+    public String getAddress(int id);
 }

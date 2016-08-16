@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hand.dao.CustomerDAO">
+
+<!-- 查询数据总量 -->
+        <select id="getList" resultType="Customer">
+                select * from customer
+        </select>
+        <!--<select id="getCount" resultType="int">-->
+                <!--select count(*) from customer-->
+        <!--</select>-->
+        <insert id="save" parameterType="Customer" useGeneratedKeys="true" keyProperty="customerid">
+                INSERT INTO customer(store_id,first_name,last_name,email,address_id,create_date) VALUES (#{storeid},#{firstname},#{lastname},#{email},#{addressid},#{createdate});
+        </insert>
+        <select id="getCustomerid" resultType="int" parameterType="Customer">
+                SELECT customer_id customerid FROM customer WHERE first_name=#{firstname} AND last_name=#{lastname} ;
+        </select>
+        <delete id="delete" parameterType="int">
+                DELETE FROM customer WHERE customer_id=#{id};
+        </delete>
+
+</mapper>

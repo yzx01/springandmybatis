@@ -2,8 +2,8 @@ package com.hand.serviceimpl;
 
 import com.hand.dao.AddressDAO;
 import com.hand.service.AddressService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-
 
 import javax.annotation.Resource;
 
@@ -12,19 +12,17 @@ import javax.annotation.Resource;
  */
 @Component
 public class AddressServiceImpl implements AddressService {
-   public AddressDAO addressDAO;
+    @Autowired
+    private AddressDAO addressDAO;
 
-    public AddressDAO getAddressDAOO() {
-        return addressDAO;
-    }
+    public Integer getAddressById(int id) {
+        Integer count = addressDAO.getAddressById(id);
 
-    @Resource(name="addressDAO")
-    public void setCustomerDAO(AddressDAO addressDAO) {
-        this.addressDAO = addressDAO;
-    }
-
-    public Integer getAddress(int id){
-        Integer count= addressDAO.getAddressById(id);
         return count;
+    }
+
+    public String getAddress(int id) {
+       String s = addressDAO.getAddress(id);
+        return s;
     }
 }

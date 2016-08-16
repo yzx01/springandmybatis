@@ -7,35 +7,14 @@ import org.springframework.stereotype.Component;
 import javax.annotation.Resource;
 import java.util.List;
 
-@Component
-public class CustomerDAO {
-	
-	
-	private SqlSessionTemplate sqlSessionTemplate;
-	
-	public SqlSessionTemplate getSqlSessionTemplate() {
-		return sqlSessionTemplate;
-	}
+public interface CustomerDAO {
 
-	@Resource(name="sqlSessionTemplate")
-	public void setSqlSessionTemplate(SqlSessionTemplate sqlSessionTemplate) {
-		
-		this.sqlSessionTemplate = sqlSessionTemplate;
-	}
+	public List<Customer> getList();
 
-	public List<Customer> getList(){
-		List<Customer> list = sqlSessionTemplate.selectList("customer.getAll");
-		return list;
-	}
+	public Integer save(Customer customer);
 
-	public Integer save(Customer customer){
-		int count = sqlSessionTemplate.insert("customer.save",customer);
-		return count;
-	}
+	public int getCustomerid(Customer customer);
 
-	public int getCustomerid(Customer customer){
-		int id = sqlSessionTemplate.selectOne("customer.getId",customer);
-		return id;
-	}
+	public int delete(int id);
 
 }
